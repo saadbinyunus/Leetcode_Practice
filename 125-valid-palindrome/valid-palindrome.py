@@ -1,7 +1,6 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        #Whenever both pointers point to valid characters, we compare them in lowercase form.
-        #If at any point they differ, the string is not a palindrome.
+
         #TWO POINTERS
         left = 0
         right = len(s)-1
@@ -14,11 +13,12 @@ class Solution:
 
             while left < right and not s[right].isalnum():
                 right -= 1    
-            
+
+            #Whenever both pointers point to valid characters, we compare them in lowercase form.
             if s[left].lower() != s[right].lower():
-                return False
+                return False    #If at any point they differ, the string is not a palindrome.
             
-            else:
+            else: # keep going till it finds mismatch
                 left  += 1
                 right -= 1
 
