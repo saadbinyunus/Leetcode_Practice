@@ -10,15 +10,18 @@ class Solution:
         current  = head
         previous = None #none is basically null
 
+        #iterating thru objects in memory
         while current != None:
             #We must save the next node before breaking the chain
             next_node = current.next
 
-            #reversing the link
+            #break link and reverse it
             current.next = previous
 
             #Moving the pointers ahead
             previous = current
             current = next_node
-            
+
         return previous
+        # current points to null
+        # previous points to last element and we send it back to the program as the new head
